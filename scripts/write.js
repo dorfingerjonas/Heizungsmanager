@@ -1,5 +1,4 @@
 window.addEventListener('load', () => {
-  window.location.href='./';
 
   const config = {
     apiKey: "AIzaSyCQERvZqnAzdQJVh-kqYzYlySTPltzCAb4",
