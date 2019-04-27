@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
+    <script src="scripts/write.js" charset="utf-8"></script>
+    <script src="scripts/inputAnimation.js" charset="utf-8"></script>
+    <script src="scripts/init.js" charset="utf-8"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
+    <title>Heizungsmanager</title>
+  </head>
+  <body>
+
+    <form id="form" action="index.html" method="get">
+      <span id="dateLBL">Datum</span>
+      <input id="date" type="date">
+
+      <br><br>
+
+      <span id="startTimeLBL">Startzeit</span>
+      <input id="startTime" type="time">
+
+      <br><br>
+
+      <span id="endTimeLBL">Endzeit</span>
+      <input id="endTime" type="time">
+
+      <br><br>
+
+      <span id="roomLBL">Raum</span>
+      <br>
+      <input type="radio" name="room" id="hall" value="Saal" checked>Saal
+      <br>
+      <input type="radio" name="room" id="kitchen" value="Küche">Küche
+
+      <br><br>
+
+      <span id="reasonLBL">Veranstaltung</span>
+      <input id="reason" type="text">
+
+      <br><br>
+
+      <span id="nameLBL">Name</span>
+      <input id="name" type="text">
+
+      <br><br>
+
+      <div id="buttonWrapper">
+        <button type="button" id="listBtn">Liste</button>
+        <button type="button" id="submitBtn">Eintrag erstellen</button>
+      </div>
+
+    </form>
+
+    <span id="errorField"> </span>
+
+  </body>
+</html>

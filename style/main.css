@@ -1,0 +1,82 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+input[type="date"], input[type="time"], input[type="text"] {
+  outline: none;
+  border: none;
+  border-bottom: lightgray 2px solid;
+  height: 1.5vw;
+  width: 30vw;
+  display: block;
+  font-size: 100%;
+  transition: border-bottom 250ms ease;
+  cursor: text;
+  padding: 0;
+}
+
+span {
+  user-select: none;
+}
+
+#nameLBL, #reasonLBL {
+  user-select: none;
+  position: relative;
+  left: 0;
+  transition: font-size 250ms, top 250ms;
+  pointer-events: none;
+  font-weight: 100;
+  font-size: 12pt;
+  top: 1vw;
+  font-family: 'Roboto', sans-serif;
+}
+
+input:focus {
+  border-bottom: darkblue 2px solid;
+}
+
+input:focus {
+  border-bottom: darkblue 2px solid;
+}
+
+#buttonWrapper {
+  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding: 10px;
+  width: 40%;
+  border: 2px solid #0f5fa6;
+  border-radius: 40px;
+  background: transparent;
+  color: #0f5fa6;
+  letter-spacing: 1px;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0f5fa6;
+  color: #fff;
+}
+
+#errorField {
+  position: absolute;
+  bottom: 5%;
+  color: red;
+}
