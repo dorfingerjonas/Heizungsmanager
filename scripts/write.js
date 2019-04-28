@@ -100,8 +100,8 @@ window.addEventListener('load', () => {
 
   listBtn.addEventListener('click', () => {
     window.location.href='./liste';
-    const reason = document.getElementById('reason').value = '';
-    const name = document.getElementById('name').value = '';
+    document.getElementById('reason').value = '';
+    document.getElementById('name').value = '';
   });
 });
 
