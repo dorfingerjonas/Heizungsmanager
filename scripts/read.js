@@ -13,7 +13,6 @@ window.addEventListener('load', () => {
   let eintraege = [];
   let content;
   let infos = [];
-  let subIndizes = [];
   let pageWrapper = document.getElementById('');
   let newEintrag = document.createElement('div');
   let div = document.createElement('div');
