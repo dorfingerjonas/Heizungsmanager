@@ -10,12 +10,8 @@ window.addEventListener('load', () => {
 
   firebase.initializeApp(config);
 
-  let eintraege = [];
   let content;
   let infos = [];
-  let pageWrapper = document.getElementById('');
-  let newEintrag = document.createElement('div');
-  let div = document.createElement('div');
 
   firebase.database().ref('Einträge').once('value').then((snapshot) => {
 
@@ -57,10 +53,7 @@ window.addEventListener('load', () => {
       let reason = infos[i].reason;
 
       let contentWrapper = document.getElementById('contentWrapper');
-
       let newEintrag = document.createElement('div');
-
-      const div = document.createElement('div');
 
       let dateBox = document.createElement('div');
       let startBox = document.createElement('div');
