@@ -91,18 +91,23 @@ window.addEventListener('load', () => {
         let name = infos[i].name;
         let reason = infos[i].reason;
 
-        let contentWrapper = document.getElementById('contentWrapper');
+        let contentWrapper = document.getElementById('mobileContentWrapper');
         let newEintrag = document.createElement('div');
 
+        // let duration = endTime.split(':')[0] - startTime.split(':')[0] +"h";
+        //
+        // console.log(duration);
+
         let dateBox = document.createElement('div');
+        let durationBox = document.createElement('div');
         let startBox = document.createElement('div');
         let endBox = document.createElement('div');
         let roomBox = document.createElement('div');
         let nameBox = document.createElement('div');
         let reasonBox = document.createElement('div');
 
-        let eintragData = [date, startTime, endTime, room, name, reason];
-        let outputArr = [dateBox, startBox, endBox, roomBox, nameBox, reasonBox];
+        let eintragData = [date, startTime, room];
+        let outputArr = [dateBox, startBox, roomBox];
 
 
         for (let i = 0; i < outputArr.length; i++) {
@@ -117,7 +122,7 @@ window.addEventListener('load', () => {
     }
 
     // Change Backgroundcolor of every second Element
-    let children = document.getElementById('contentWrapper').childNodes;
+    let children = document.getElementById('mobileContentWrapper').childNodes;
 
     for (let i = 0; i < children.length; i++) {
       if (i % 2 !== 0) {
