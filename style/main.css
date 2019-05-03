@@ -56,8 +56,9 @@ button {
   display: block;
   margin: 0 auto;
   margin-top: 2%;
+  margin: 2%;
   padding: 10px;
-  width: 40%;
+  width: 50%;
   border: 2px solid #0f5fa6;
   border-radius: 40px;
   background: transparent;
