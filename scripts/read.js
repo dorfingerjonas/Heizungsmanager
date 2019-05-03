@@ -76,6 +76,7 @@ window.addEventListener('load', () => {
         }
         contentWrapper.appendChild(newEintrag);
       }
+      changeBackgroundColor('contentWrapper');
     } else {
 
       // TODO: DEN UNTEREN CODE AN DIE MOBILE VERSION ANPASSEN:
@@ -119,17 +120,21 @@ window.addEventListener('load', () => {
         }
         contentWrapper.appendChild(newEintrag);
       }
+      changeBackgroundColor('mobileContentWrapper');
     }
 
     // Change Backgroundcolor of every second Element
-    let children = document.getElementById('mobileContentWrapper').childNodes;
+    function changeBackgroundColor(id) {
+      let children = document.getElementById(id).childNodes;
 
-    for (let i = 0; i < children.length; i++) {
-      if (i % 2 !== 0) {
-        children[i].classList.add('ndSubmit');
+      for (let i = 0; i < children.length; i++) {
+        if (i % 2 !== 0) {
+          children[i].classList.add('ndSubmit');
+        }
       }
     }
   });
+
   document.getElementById('backBtn').addEventListener('click', () => {
     window.location.href='../';
   });
