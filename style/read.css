@@ -41,7 +41,6 @@ header span {
 #contentWrapper {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 71vh;
 }
 
 #contentWrapper div div {
@@ -56,7 +55,6 @@ button {
   margin: 0 auto;
   margin-top: 2%;
   padding: 10px;
-  width: 7%;
   border: 2px solid #0f5fa6;
   border-radius: 40px;
   background: transparent;
