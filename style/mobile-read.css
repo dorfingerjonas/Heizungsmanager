@@ -69,20 +69,20 @@
     display: block;
     margin: 0;
     padding: 20px;
-    width: 100%;
+    width: 100vw;
     background: #0f5fa6;
     color: white;
     letter-spacing: 1px;
-    font-size: 18px;
     transition: all 0.2s ease-in-out;
     outline: none;
     cursor: pointer;
     border-radius: 0px !important;
     position: relative;
     border: none;
-    left: 0;
+    right: 0;
     bottom: 0;
     font-size: 400%;
+    box-sizing: border-box;
   }
 
   button:hover {
