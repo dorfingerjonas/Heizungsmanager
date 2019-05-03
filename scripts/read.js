@@ -1,14 +1,17 @@
 window.addEventListener('load', () => {
   const config = {
-    apiKey: "AIzaSyCQERvZqnAzdQJVh-kqYzYlySTPltzCAb4",
-    authDomain: "heizungsmanager-cac2c.firebaseapp.com",
-    databaseURL: "https://heizungsmanager-cac2c.firebaseio.com",
-    projectId: "heizungsmanager-cac2c",
-    storageBucket: "heizungsmanager-cac2c.appspot.com",
-    messagingSenderId: "669776581855"
+    apiKey: 'AIzaSyCQERvZqnAzdQJVh-kqYzYlySTPltzCAb4',
+    authDomain: 'heizungsmanager-cac2c.firebaseapp.com',
+    databaseURL: 'https://heizungsmanager-cac2c.firebaseio.com',
+    projectId: 'heizungsmanager-cac2c',
+    storageBucket: 'heizungsmanager-cac2c.appspot.com',
+    messagingSenderId: '669776581855'
   };
 
   firebase.initializeApp(config);
+
+  defineContentWrapperHeight();
+  defineMobileContentWrapperHeight();
 
   let content;
   let infos = [];
@@ -91,7 +94,7 @@ window.addEventListener('load', () => {
       // TODO: DEN UNTEREN CODE AN DIE MOBILE VERSION ANPASSEN:
       // 1. DAUER BERECHNEN
       // 2. DATUM, DAUER, RAUM ausgeben
-      // 3. Pfeil zum Ausklappen hinzufügen
+      // 3. Pfeil zum Ausklappen hinzufügen: <i class="fas fa-sort-down"></i>;
 
       for (let i = 0; i < infos.length; i++) {
         let date = infos[i].date;
@@ -104,7 +107,7 @@ window.addEventListener('load', () => {
         let contentWrapper = document.getElementById('mobileContentWrapper');
         let newEintrag = document.createElement('div');
 
-        // let duration = endTime.split(':')[0] - startTime.split(':')[0] +"h";
+        // let duration = endTime.split(':')[0] - startTime.split(':')[0] +'h';
         //
         // console.log(duration);
 
@@ -127,6 +130,11 @@ window.addEventListener('load', () => {
             newEintrag.appendChild(outputArr[i]);
           }, 250);
         }
+        let iElement = document.createElement('i');
+        iElement.classList.add('fas');
+        iElement.classList.add('fa-sort-down');
+        newEintrag.appendChild(iElement);
+
         contentWrapper.appendChild(newEintrag);
       }
       changeBackgroundColor('mobileContentWrapper');
@@ -144,3 +152,19 @@ window.addEventListener('load', () => {
     }
   });
 });
+
+function defineContentWrapperHeight() {
+  let header = document.getElementsByTagName('header')[0];
+  let container = document.getElementById('container');
+  let contentWrapper = document.getElementById('contentWrapper');
+
+  contentWrapper.style.height = parseInt(container.clientHeight - header.clientHeight - 1) + 'px';
+}
+
+function defineMobileContentWrapperHeight() {
+  let header = document.getElementsByTagName('header')[1];
+  let container = document.getElementById('mobileContainer');
+  let contentWrapper = document.getElementById('mobileContentWrapper');
+
+  contentWrapper.style.height = parseInt(container.clientHeight - header.clientHeight - 1) + 'px';
+}
