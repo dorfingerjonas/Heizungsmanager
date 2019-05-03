@@ -12,17 +12,18 @@
     outline: none;
     border: none;
     border-bottom: lightgray 2px solid;
-    height: 3vw;
+    height: 5vw;
     width: 85vw;
     display: block;
-    font-size: 100%;
     transition: border-bottom 250ms ease;
     cursor: text;
     padding: 0;
+    font-size: 300%;
   }
 
   span {
     user-select: none;
+    font-size: 300%;
   }
 
   #nameLBL, #reasonLBL {
@@ -32,9 +33,9 @@
     transition: font-size 250ms, top 250ms;
     pointer-events: none;
     font-weight: 100;
-    font-size: 12pt;
-    top: 1vw;
+    top: 5vw;
     font-family: 'Roboto', sans-serif;
+    font-size: 300%;
   }
 
   input:focus {
@@ -61,16 +62,20 @@
     display: block;
     margin: 0;
     padding: 20px;
-    width: 50%;
-    background: transparent;
+    width: 100%;
+    background: #0f5fa6;
     color: white;
-    border: none;
     letter-spacing: 1px;
     font-size: 18px;
     transition: all 0.2s ease-in-out;
     outline: none;
     cursor: pointer;
     border-radius: 0px !important;
+    position: relative;
+    border: none;
+    left: 0;
+    bottom: 0;
+    font-size: 300%;
   }
 
   button:hover {
