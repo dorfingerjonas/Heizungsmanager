@@ -86,6 +86,7 @@
   }
 
   button:hover {
-    background-color: #00498a;
+    background-color: #0f5fa6;
+    color: white;
   }
 }

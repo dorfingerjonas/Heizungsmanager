@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
           input.addEventListener('blur', () => {
             if (input.value === '') {
               text.fontSize = '300%';
-              text.top = '5vw';
+              text.top = '1vw';
             }
           });
         }
