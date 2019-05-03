@@ -52,9 +52,17 @@ window.addEventListener('load', () => {
 
   if (timeChanged) {
     startTime.value = `${hour}:${min}`;
-    endTime.value = `0${parseInt(hour) + 1}:${min}`;
+    if (hour >= 10) {
+      endTime.value = `${parseInt(hour) + 1}:${min}`;
+    } else {
+      endTime.value = `0${parseInt(hour) + 1}:${min}`;
+    }
   } else {
     startTime.value = `${hour}:${min}`;
-    endTime.value = `0${parseInt(hour) + 1}:${min}`;
+    if (hour >= 10) {
+      endTime.value = `${parseInt(hour) + 1}:${min}`;
+    } else {
+      endTime.value = `0${parseInt(hour) + 1}:${min}`;
+    }
   }
 });
