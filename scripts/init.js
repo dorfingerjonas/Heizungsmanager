@@ -45,16 +45,16 @@ window.addEventListener('load', () => {
   }
 
   if (dateChanged) {
-    date.value = `${currentYear}-${month}-${currentDay}`;
+    date.value = `${currentYear}-${month}-${day}`;
   } else {
-    date.value = `${currentYear}-${currentMonth}-${currentDay}`;
+    date.value = `0${currentYear}-${month}-${day}`;
   }
 
   if (timeChanged) {
     startTime.value = `${hour}:${min}`;
-    endTime.value = `${hour + 1}:${min}`;
+    endTime.value = `0${parseInt(hour) + 1}:${min}`;
   } else {
-    startTime.value = `${currentHour}:${currentMinute}`;
-    endTime.value = `${currentHour + 1}:${currentMinute}`;
+    startTime.value = `${hour}:${min}`;
+    endTime.value = `0${parseInt(hour) + 1}:${min}`;
   }
 });
