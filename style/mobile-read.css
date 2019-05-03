@@ -28,7 +28,7 @@
     justify-content: space-around;
     border-bottom: 1px solid lightgray;
     user-select: none;
-    font-size: 270%;
+    font-size: 300%;
   }
 
   header span {
@@ -48,7 +48,8 @@
     text-align: center;
     display: inline-block;
     margin: 0.75% 0;
-    font-size: 200%;
+    font-size: 250%;
+    font-weight: 100;
   }
 
   #buttonWrapper {
