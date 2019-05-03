@@ -45,6 +45,11 @@ window.addEventListener('load', () => {
 
     // Write to Website
     if (window.innerWidth > 1000) {
+
+      document.getElementById('backBtn').addEventListener('click', () => {
+        window.location.href='../';
+      });
+
       for (let i = 0; i < infos.length; i++) {
         let date = infos[i].date;
         let startTime = infos[i].startTime;
@@ -78,6 +83,10 @@ window.addEventListener('load', () => {
       }
       changeBackgroundColor('contentWrapper');
     } else {
+
+      document.getElementById('mobileBackBtn').addEventListener('click', () => {
+        window.location.href='../';
+      });
 
       // TODO: DEN UNTEREN CODE AN DIE MOBILE VERSION ANPASSEN:
       // 1. DAUER BERECHNEN
@@ -133,9 +142,5 @@ window.addEventListener('load', () => {
         }
       }
     }
-  });
-
-  document.getElementById('backBtn').addEventListener('click', () => {
-    window.location.href='../';
   });
 });
