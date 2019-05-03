@@ -44,40 +44,85 @@ window.addEventListener('load', () => {
     }
 
     // Write to Website
-    for (let i = 0; i < infos.length; i++) {
-      let date = infos[i].date;
-      let startTime = infos[i].startTime;
-      let endTime = infos[i].endTime;
-      let room = infos[i].room;
-      let name = infos[i].name;
-      let reason = infos[i].reason;
+    if (window.innerWidth > 1000) {
+      for (let i = 0; i < infos.length; i++) {
+        let date = infos[i].date;
+        let startTime = infos[i].startTime;
+        let endTime = infos[i].endTime;
+        let room = infos[i].room;
+        let name = infos[i].name;
+        let reason = infos[i].reason;
 
-      let contentWrapper = document.getElementById('contentWrapper');
-      let newEintrag = document.createElement('div');
+        let contentWrapper = document.getElementById('contentWrapper');
+        let newEintrag = document.createElement('div');
 
-      let dateBox = document.createElement('div');
-      let startBox = document.createElement('div');
-      let endBox = document.createElement('div');
-      let roomBox = document.createElement('div');
-      let nameBox = document.createElement('div');
-      let reasonBox = document.createElement('div');
+        let dateBox = document.createElement('div');
+        let startBox = document.createElement('div');
+        let endBox = document.createElement('div');
+        let roomBox = document.createElement('div');
+        let nameBox = document.createElement('div');
+        let reasonBox = document.createElement('div');
 
-      let eintragData = [date, startTime, endTime, room, name, reason];
-      let outputArr = [dateBox, startBox, endBox, roomBox, nameBox, reasonBox];
+        let eintragData = [date, startTime, endTime, room, name, reason];
+        let outputArr = [dateBox, startBox, endBox, roomBox, nameBox, reasonBox];
 
 
-      for (let i = 0; i < outputArr.length; i++) {
-        setTimeout(() => {
-          outputArr[i].classList.add('output');
-          outputArr[i].textContent = eintragData[i];
-          newEintrag.appendChild(outputArr[i]);
-        }, 250);
+        for (let i = 0; i < outputArr.length; i++) {
+          setTimeout(() => {
+            outputArr[i].classList.add('output');
+            outputArr[i].textContent = eintragData[i];
+            newEintrag.appendChild(outputArr[i]);
+          }, 250);
+        }
+        contentWrapper.appendChild(newEintrag);
       }
-      contentWrapper.appendChild(newEintrag);
+    } else {
+
+      // TODO: DEN UNTEREN CODE AN DIE MOBILE VERSION ANPASSEN:
+      // 1. DAUER BERECHNEN
+      // 2. DATUM, DAUER, RAUM ausgeben
+      // 3. Pfeil zum Ausklappen hinzufügen
+
+      for (let i = 0; i < infos.length; i++) {
+        let date = infos[i].date;
+        let startTime = infos[i].startTime;
+        let endTime = infos[i].endTime;
+        let room = infos[i].room;
+        let name = infos[i].name;
+        let reason = infos[i].reason;
+
+        let contentWrapper = document.getElementById('mobileContentWrapper');
+        let newEintrag = document.createElement('div');
+
+        // let duration = endTime.split(':')[0] - startTime.split(':')[0] +"h";
+        //
+        // console.log(duration);
+
+        let dateBox = document.createElement('div');
+        let durationBox = document.createElement('div');
+        let startBox = document.createElement('div');
+        let endBox = document.createElement('div');
+        let roomBox = document.createElement('div');
+        let nameBox = document.createElement('div');
+        let reasonBox = document.createElement('div');
+
+        let eintragData = [date, startTime, room];
+        let outputArr = [dateBox, startBox, roomBox];
+
+
+        for (let i = 0; i < outputArr.length; i++) {
+          setTimeout(() => {
+            outputArr[i].classList.add('output');
+            outputArr[i].textContent = eintragData[i];
+            newEintrag.appendChild(outputArr[i]);
+          }, 250);
+        }
+        contentWrapper.appendChild(newEintrag);
+      }
     }
 
     // Change Backgroundcolor of every second Element
-    let children = document.getElementById('contentWrapper').childNodes;
+    let children = document.getElementById('mobileContentWrapper').childNodes;
 
     for (let i = 0; i < children.length; i++) {
       if (i % 2 !== 0) {
