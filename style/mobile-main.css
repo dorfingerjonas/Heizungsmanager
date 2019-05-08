@@ -82,7 +82,7 @@
     background-color: #00498a;
   }
 
-  #errorField {
+  #errorField, #succesField {
     position: absolute;
     bottom: 17%;
     color: red;
