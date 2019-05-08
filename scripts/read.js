@@ -28,7 +28,7 @@ window.addEventListener('load', () => {
     // Sort Array by timestamp
     for (let i = 0; i < infos.length; i++) {
       for (let j = i + 1; j < infos.length; j++) {
-        if (infos[i].timestamp > infos[j].timestamp) {
+        if (infos[i].startTimestamp > infos[j].startTimestamp) {
           let help = infos[j];
           infos[j] = infos[i];
           infos[i] = help;
@@ -106,10 +106,6 @@ window.addEventListener('load', () => {
 
         let contentWrapper = document.getElementById('mobileContentWrapper');
         let newEintrag = document.createElement('div');
-
-        // let duration = endTime.split(':')[0] - startTime.split(':')[0] +'h';
-        //
-        // console.log(duration);
 
         let dateBox = document.createElement('div');
         let durationBox = document.createElement('div');
