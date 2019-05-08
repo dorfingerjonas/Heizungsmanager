@@ -13,6 +13,7 @@ window.addEventListener('load', () => {
 
   const submitBtn = document.getElementById('submitBtn');
   const listBtn = document.getElementById('listBtn');
+  const currentTime = new Date();
 
   submitBtn.addEventListener('click', () => {
 
@@ -45,11 +46,15 @@ window.addEventListener('load', () => {
     let s = 00;
     let ms = 000;
 
-    let currentTime = new Date();
+    let startTimestamp = new Date(year, month, day, hour, min, s, ms).getTime();
 
-    let timestamp = new Date(year, month, day, hour, min, s, ms);
+    parts = endTime.value.split(':');
+    hour = parts[0];
+    min = parts[1];
+    s = 00;
+    ms = 000;
 
-    timestamp = timestamp.getTime();
+    let endTimestamp = new Date(year, month, day, hour, min, s, ms).getTime();
 
     parts = startTime.value.split(':');
     const startHour = parts[0];
@@ -66,6 +71,9 @@ window.addEventListener('load', () => {
     for (input of inputs) {
       if (input.value === '' && input.type !== 'radio') {
         areFilled = false;
+        input.style.borderBottom = 'red 2px solid';
+      } else {
+        input.style.borderBottom = 'lightgray 2px solid';
       }
     }
 
@@ -73,26 +81,27 @@ window.addEventListener('load', () => {
       printError('Es dürfen keine Felder leer bleiben!');
     } else if (endHour < startHour) {
       printError('Endzeit liegt vor der Startzeit!');
-    } else if (timestamp < currentTime.getTime()) {
+    } else if (startTimestamp < currentTime.getTime()) {
       printError('Datum liegt in der Vergangenheit!');
     } else if (endHour === startHour) {
       if (endMinute < startMinute) {
         printError('Endzeit liegt vor der Startzeit!');
       }
     } else {
-      firebase.database().ref("Einträge/" + timestamp).set({
+      firebase.database().ref("Einträge/" + startTimestamp).set({
       date: date.value,
       startTime: startTime.value,
       endTime: endTime.value,
       room: room,
       reason: reason.value,
       name: name.value,
-      timestamp: timestamp
+      startTimestamp: startTimestamp,
+      endTimestamp: endTimestamp,
     }, (error) => {
       if (error) {
-        console.log("failed");
+        printError('Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
       } else {
-        console.log('successful');
+        document.getElementById('succesField').textContent = 'Ein neuer Eintrag wurde erfolgreich erstellt.';
       }
     });
     }
