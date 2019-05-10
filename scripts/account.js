@@ -95,15 +95,22 @@ window.addEventListener('load', () => {
       promise.catch((error) => {
         printError('E-Mail Adresse oder Passwort ist ungültig.', 'signInFDB')
       });
-    }
-  });
 
-  signUpBtn.addEventListener('click', () => {
+      promise.then(() => {
+        printError('Eingeloggt.', 'signInFDB');
+        console.log(email.value);
+        console.log(password.value);
+      });
+    }
+  }
+
+  function signUp() {
     const firstname = document.getElementById('signUpFirstname');
     const lastname = document.getElementById('signUpLastname');
     const email = document.getElementById('signUpEmail');
     const password = document.getElementById('signUpPassword');
     const confirmedPassword = document.getElementById('signUpConfirmPassword');
+    currentWindow = 'signUp';
 
     firstname.style.borderBottom = 'lightgray 2px solid';
     lastname.style.borderBottom = 'lightgray 2px solid';
@@ -165,29 +172,7 @@ window.addEventListener('load', () => {
         email: email.value
       });
     }
-  });
-
-  changeToSignIn.addEventListener('click', () => {
-    let signIn = document.getElementById('signInWrapper');
-    let signUp = document.getElementById('signUpWrapper');
-
-    signUp.style.opacity = 0;
-    signUp.style.display = 'none';
-    signIn.style.opacity = 1;
-    signIn.style.display = 'block';
-  });
-
-  changeToSignUp.addEventListener('click', () => {
-    let signIn = document.getElementById('signInWrapper');
-    let signUp = document.getElementById('signUpWrapper');
-
-    signIn.style.opacity = 0;
-    signIn.style.display = 'none';
-    signUp.style.opacity = 1;
-    signUp.style.display = 'block';
-  });
-
-
+  }
 });
 
 function validatePassword(password) {
