@@ -4,10 +4,77 @@ window.addEventListener('load', () => {
   const signUpBtn = document.getElementById('signUpBtn');
   const changeToSignIn = document.getElementById('loginNow');
   const changeToSignUp = document.getElementById('registerNow');
+  let currentWindow = 'signIn';
 
-  signInBtn.addEventListener('click', () => {
+  signInBtn.addEventListener('click', signIn);
+
+  signUpBtn.addEventListener('click', signUp);
+
+  if (currentWindow === 'signIn') {
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        signIn();
+      }
+    });
+  } else {
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        signUp();
+      }
+    });
+  }
+
+  changeToSignIn.addEventListener('click', () => {
+    let signIn = document.getElementById('signInWrapper');
+    let signUp = document.getElementById('signUpWrapper');
+
+    signUp.style.opacity = 0;
+    signUp.style.display = 'none';
+    signIn.style.display = 'block';
+    setTimeout(() => {
+      signIn.style.opacity = 1;
+    }, 100);
+  });
+
+  changeToSignUp.addEventListener('click', () => {
+    let signIn = document.getElementById('signInWrapper');
+    let signUp = document.getElementById('signUpWrapper');
+
+    signIn.style.opacity = 0;
+    signIn.style.display = 'none';
+    signUp.style.display = 'block';
+
+    setTimeout(() => {
+      signUp.style.opacity = 1;
+    }, 100);
+  });
+
+  firebase.auth().onAuthStateChanged((user) => {
+
+    let signIn = document.getElementById('signInWrapper');
+    let signUp = document.getElementById('signUpWrapper');
+    let eintrag = document.getElementById('eintragForm');
+
+    if (user) {
+      console.log("currently logged in.");
+      signIn.style.display = 'none';
+      signIn.style.opacity = 0;
+      signUp.style.display = 'none';
+      signUp.style.opacity = 0;
+      eintrag.style.display = 'block';
+    } else {
+      signIn.style.display = 'block';
+      signIn.style.opacity = 1;
+      signUp.style.display = 'none';
+      signUp.style.opacity = 0;
+      eintrag.style.display = 'none';
+    }
+  });
+
+  function signIn() {
     const email = document.getElementById('signInEmail');
     const password = document.getElementById('signInPassword');
+    currentWindow = 'signIn';
 
     email.style.borderBottom = 'lightgray 2px solid';
     password.style.borderBottom = 'lightgray 2px solid';
