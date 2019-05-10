@@ -5,12 +5,14 @@
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/mobile-main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.jpg">
     <script src="scripts/write.js" charset="utf-8"></script>
     <script src="scripts/inputAnimation.js" charset="utf-8"></script>
     <script src="scripts/init.js" charset="utf-8"></script>
     <script src="scripts/removePastEntry.js" charset="utf-8"></script>
     <script src="scripts/account.js" charset="utf-8"></script>
+    <script src="scripts/createPattern.js" charset="utf-8"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
@@ -24,12 +26,16 @@
           <span id="signInEmailLBL">E-Mail Adresse</span>
           <input type="text" id="signInEmail">
 
+          <br><br>
+
           <span id="signInPasswordLBL">Passwort</span>
           <input type="password" id="signInPassword">
 
           <button type="button" id="signInBtn">Anmelden</button>
 
         </form>
+
+        <br><br>
 
         <p id="noAccount">Noch nicht registriert? <span id="registerNow">Registrieren</span>.</p>
 
@@ -42,20 +48,30 @@
           <span id="signUpFirstnameLBL">Vorname</span>
           <input type="text" id="signUpFirstname">
 
+          <br><br>
+
           <span id="signUpLastnameLBL">Nachname</span>
           <input type="text" id="signUpLastname">
+
+          <br><br>
 
           <span id="signUpEmailLBL">E-Mail Adresse</span>
           <input type="text" id="signUpEmail">
 
+          <br><br>
+
           <span id="signUpPasswordLBL">Passwort</span>
           <input type="password" id="signUpPassword">
+
+          <br><br>
 
           <span id="signUpConfirmPasswordLBL">Passwort wiederholen</span>
           <input type="password" id="signUpConfirmPassword">
 
           <button type="button" id="signUpBtn">Registrieren</button>
         </form>
+
+        <br>
 
         <p id="alreadyAccount">Bereits registriert? <span id="loginNow">Anmelden</span>.</p>
 
@@ -98,12 +114,30 @@
 
       <br><br>
 
-      <div id="buttonWrapper">
+      <div class="buttonWrapper">
         <button type="button" id="listBtn">Liste</button>
         <button type="button" id="submitBtn">Eintrag erstellen</button>
       </div>
 
+      <div class="buttonWrapper">
+        <button type="button" id="choosePatternBtn">Vorlage auswählen</button>
+        <button type="button" id="createPatternBtn">Vorlage erstellen</button>
+      </div>
+
+
     </form>
+
+    <div id="createPatternPopUp">
+      <i id='closeCreatePatternPopUp' class='material-icons'>&#xe5cd;</i>
+      <span id="patternNameLBL">Name der Vorlage</span>
+      <input type="text" id="patternName">
+
+      <br>
+
+      <button type="button" id="savePatternBtn">Vorlage erstellen</button>
+    </div>
+
+    <div id="backgroundBlocker"></div>
 
     <span id="errorField">&nbsp;</span>
     <span id="succesField">&nbsp;</span>
