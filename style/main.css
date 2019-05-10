@@ -9,7 +9,11 @@ body {
   font-weight: 100;
 }
 
-input[type="date"], input[type="time"], input[type="text"] {
+#eintragForm {
+  display: none;
+}
+
+input[type="date"], input[type="time"], input[type="text"], input[type="password"] {
   outline: none;
   border: none;
   border-bottom: lightgray 2px solid;
@@ -26,7 +30,7 @@ span {
   user-select: none;
 }
 
-#nameLBL, #reasonLBL {
+form span {
   user-select: none;
   position: relative;
   left: 0;
@@ -79,5 +83,54 @@ button:hover {
 #errorField, #succesField {
   position: absolute;
   bottom: 5%;
+  color: red;
+}
+
+/* Account */
+
+#signUpWrapper button, #signInWrapper button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin: 2% 0 2% 2%;
+  padding: 10px;
+  width: auto;
+  border: 2px solid #0f5fa6;
+  border-radius: 40px;
+  background: transparent;
+  color: #0f5fa6;
+  letter-spacing: 1px;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+  float: right;
+}
+
+#signUpWrapper button:hover, #signInWrapper button:hover {
+  background-color: #0f5fa6;
+  color: #fff;
+}
+
+#signInWrapper {
+  display: block;
+  opacity: 1;
+  transition: all 500ms ease-out;
+}
+
+#signUpWrapper {
+  display: none;
+  opacity: 0;
+  transition: all 500ms ease-out;
+}
+
+#alreadyAccount span, #noAccount span {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#signInFDB, #signUpFDB {
   color: red;
 }
