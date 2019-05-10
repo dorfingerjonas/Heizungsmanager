@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
   for (let input of document.getElementsByTagName('input')) {
 
-    if (input.type === 'text') {
+    if (input.type === 'text' || input.type === 'password') {
       input.addEventListener('focus', () => {
         let text = document.getElementById(`${input.id}LBL`).style;
 
