@@ -13,6 +13,10 @@ body {
   display: none;
 }
 
+br {
+  user-select: none;
+}
+
 input[type="date"], input[type="time"], input[type="text"], input[type="password"] {
   outline: none;
   border: none;
@@ -28,6 +32,10 @@ input[type="date"], input[type="time"], input[type="text"], input[type="password
 
 span {
   user-select: none;
+}
+
+#accountWrapper {
+  display: none;
 }
 
 #accountWrapper form span, #reasonLBL, #nameLBL, #patternNameLBL {
@@ -135,12 +143,12 @@ button:hover {
   color: red;
 }
 
-/* Pattern */
+/* create Pattern */
 
 #createPatternPopUp {
   display: none;
   box-shadow: 0px 0px 14px 6px rgba(217,217,217,1);
-  width: 20vw;
+  width: 21vw;
   padding: 20px;
   border-radius: 10px;
   position: absolute;
@@ -148,8 +156,13 @@ button:hover {
   z-index: 1;
 }
 
+#createPatternPopUp p {
+  font-weight: normal;
+  font-size: 115%;
+}
+
 #createPatternPopUp input {
-  width: 20vw;
+  width: 21vw;
 }
 
 #createPatternPopUp button {
@@ -161,6 +174,43 @@ button:hover {
 }
 
 #createPatternPopUp i {
+  float: right;
+  cursor: pointer;
+}
+
+/* choose Pattern */
+
+#choosePatternPopUp {
+  display: none;
+  box-shadow: 0px 0px 14px 6px rgba(217,217,217,1);
+  width: 21vw;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+}
+
+#choosePatternPopUp p {
+  font-weight: normal;
+  font-size: 115%;
+}
+
+#choosePatternPopUp div {
+  margin-bottom: 5%;
+  cursor: pointer;
+  font-size: 105%;
+}
+
+#choosePatternPopUp button {
+  font-size: 80%;
+  width: auto;
+  margin: 0 auto;
+  margin-right: 0;
+  cursor: pointer;
+}
+
+#choosePatternPopUp i {
   float: right;
   cursor: pointer;
 }
