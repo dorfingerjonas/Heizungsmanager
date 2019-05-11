@@ -52,14 +52,14 @@ window.addEventListener('load', () => {
 
   if (timeChanged) {
     startTime.value = `${hour}:${min}`;
-    if (hour >= 10) {
+    if ((hour + 1) >= 10) {
       endTime.value = `${parseInt(hour) + 1}:${min}`;
     } else {
       endTime.value = `0${parseInt(hour) + 1}:${min}`;
     }
   } else {
     startTime.value = `${hour}:${min}`;
-    if (hour >= 10) {
+    if ((hour + 1) >= 10) {
       endTime.value = `${parseInt(hour) + 1}:${min}`;
     } else {
       endTime.value = `0${parseInt(hour) + 1}:${min}`;
