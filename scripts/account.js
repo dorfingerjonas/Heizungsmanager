@@ -54,6 +54,7 @@ window.addEventListener('load', () => {
     let signIn = document.getElementById('signInWrapper');
     let signUp = document.getElementById('signUpWrapper');
     let eintrag = document.getElementById('eintragForm');
+    let accountWrapper = document.getElementById('accountWrapper');
 
     if (user) {
       console.log("currently logged in.");
@@ -62,7 +63,10 @@ window.addEventListener('load', () => {
       signUp.style.display = 'none';
       signUp.style.opacity = 0;
       eintrag.style.display = 'block';
+      accountWrapper.style.display = 'none';
     } else {
+      console.log('not logged in');
+      accountWrapper.style.display = 'block';
       signIn.style.display = 'block';
       signIn.style.opacity = 1;
       signUp.style.display = 'none';
