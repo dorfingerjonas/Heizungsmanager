@@ -13,6 +13,7 @@
     <script src="scripts/removePastEntry.js" charset="utf-8"></script>
     <script src="scripts/account.js" charset="utf-8"></script>
     <script src="scripts/createPattern.js" charset="utf-8"></script>
+    <script src="scripts/choosePattern.js" charset="utf-8"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
@@ -129,12 +130,24 @@
 
     <div id="createPatternPopUp">
       <i id='closeCreatePatternPopUp' class='material-icons'>&#xe5cd;</i>
+      <p>Erstellen Sie Ihre eigene Individuelle Vorlage.</p>
       <span id="patternNameLBL">Name der Vorlage</span>
       <input type="text" id="patternName">
 
       <br>
 
       <button type="button" id="savePatternBtn">Vorlage erstellen</button>
+    </div>
+
+    <div id="choosePatternPopUp">
+      <i id='closeChoosePatternPopUp' class='material-icons'>&#xe5cd;</i>
+      <p>Wählen Sie eine Ihrer erstellten Vorlagen aus.</p>
+
+      <br>
+
+      <div id="patternWrapper"></div>
+
+      <p id="choosePatterFDB" style="display: none">Sie haben noch keine Vorlagen erstellt.</p>
     </div>
 
     <div id="backgroundBlocker"></div>
